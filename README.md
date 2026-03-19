@@ -1,4 +1,4 @@
-<img width="1430" height="996" alt="image" src="https://github.com/user-attachments/assets/5f5d7c89-2a24-4b67-ae53-db6605f5f386" /># Login Monitoring with PostgreSQL
+# Login Monitoring with PostgreSQL
 
 This is a small SQL project I built in Kali Linux to practice working with authentication logs in PostgreSQL.
 
