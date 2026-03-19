@@ -1,4 +1,4 @@
-# Login Monitoring with PostgreSQL
+<img width="1430" height="996" alt="image" src="https://github.com/user-attachments/assets/5f5d7c89-2a24-4b67-ae53-db6605f5f386" /># Login Monitoring with PostgreSQL
 
 This is a small SQL project I built in Kali Linux to practice working with authentication logs in PostgreSQL.
 
@@ -33,22 +33,34 @@ The `login_attempts` table contains:
 
 This structure makes it possible to store login activity and analyze failed authentication attempts.
 
-## Screenshots
+## Project Steps
 
 ### 1. Database setup
 ![Database setup](screenshots/01_database_setup.png)
 
+I created the `security_monitoring` database and connected to it in PostgreSQL using `psql`. 
+This was the starting point for the whole project, since all further work was done inside this database.
+
 ### 2. Table creation
 ![Table creation](screenshots/02_table_creation.png)
+
+After connecting to the database, I created the `login_attempts` table.  
+The table stores key login event fields such as username, IP address, timestamp, login result, user agent, and country.
 
 ### 3. Data insertion
 ![Data insertion](screenshots/03_data_insertion.png)
 
+Next, I inserted a sample dataset into the `login_attempts` table. The dataset includes both successful and failed logins from different IP addresses, which made it possible to run simple security analysis queries.
+
 ### 4. Data review and failed attempts by IP
 ![Data analysis](screenshots/04_data_analysis.png)
 
+I first reviewed the stored records and then grouped failed login attempts by IP address. This helped identify which IPs generated the highest number of failed authentication attempts.
+
 ### 5. Brute-force detection
 ![Bruteforce detection](screenshots/05_bruteforce_detection.png)
+
+Finally, I applied a simple rule to detect possible brute-force sources by filtering IP addresses with 3 or more failed login attempts. This query highlighted the most suspicious IPs in the dataset.
 
 ## SQL analysis
 
